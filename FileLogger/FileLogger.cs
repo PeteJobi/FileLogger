@@ -45,9 +45,9 @@ namespace FileLogger
             if (activate) _ = UpdateLog();
         }
 
-        public void Log(object? message)
+        public void Log(params object?[] messages)
         {
-            _logBuilder.AppendLine($"{DateTime.Now.ToString("HH:mm:ss:fff")}: {message}");
+            _logBuilder.AppendLine($"{DateTime.Now.ToString("HH:mm:ss:fff")}: {string.Join(", ", messages)}");
         }
 
         private async Task UpdateLog()

@@ -2,7 +2,7 @@
 {
     public interface IFileLogger
     {
-        void Log(object? message);
+        void Log(params object?[] messages);
         void Activate(bool activate);
     }
 }
