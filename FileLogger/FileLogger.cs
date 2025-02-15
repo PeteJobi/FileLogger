@@ -65,7 +65,7 @@ namespace FileLogger
                 {
                     await File.AppendAllTextAsync(_logPath, _logBuilder.ToString());
                 }
-                catch (FileNotFoundException)
+                catch (DirectoryNotFoundException)
                 {
                     Setup();
                     return;
